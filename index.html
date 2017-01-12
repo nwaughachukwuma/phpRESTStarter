@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bassoli E-Commerce</title>
+    <!--#include virtual="/includes/meta-imports.inc"-->
+</head>
+
+<body ng-app="bassoli">
+    <div ng-controller="MainController as mc">
+        <p>
+            Hello from {{ mc.dummy }}!
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        NUMBER
+                    </th>
+                    <th>
+                        NAME
+                    </th>
+                    <th>
+                        EMAIL
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in mc.customers">
+                    <td>{{item.customerNumber}}</td>
+                    <td>{{item.customerName}}</td>
+                    <td>{{item.email}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--#include virtual="/includes/js-imports.inc"-->
+</body>
+
+</html>

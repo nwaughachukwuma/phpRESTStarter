@@ -1,0 +1,21 @@
+{
+  "name": "bassoli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "dependencies": {},
+  "devDependencies": {
+    "bower": "^1.8.0",
+    "gulp": "^3.9.1",
+    "gulp-filter": "^5.0.0",
+    "gulp-inject": "^4.2.0",
+    "gulp-minify": "0.0.14",
+    "gulp-rimraf": "^0.2.1",
+    "main-bower-files": "^2.13.1"
+  }
+}

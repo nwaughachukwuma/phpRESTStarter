@@ -1,0 +1,9 @@
+{
+    "name": "bassoli/e-commerce",
+    "type": "project",
+    "license": "UNLICENSED",
+    "require": {
+        "php-di/php-di": "^5.4",
+        "monolog/monolog": "^1.22"
+    }
+}

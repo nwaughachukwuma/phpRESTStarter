@@ -1,0 +1,15 @@
+{
+  "name": "bassoli",
+  "description": "",
+  "main": "app/app.js",
+  "license": "UNLICENSED",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular": "^1.6.1"
+  }
+}
