@@ -2,6 +2,7 @@
     'use strict;'
 
     angular.module('bassoli', [
-        'bassoli.demo'
+        'bassoli.demo',
+        'bassoli.core'
     ]);
 })();
