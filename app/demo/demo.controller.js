@@ -2,9 +2,9 @@
     'use strict;'
 
     angular.module('bassoli.demo')
-        .controller('DemoController', ['DemoService', MainController]);
+        .controller('DemoController', ['DemoService', DemoController]);
 
-    function MainController(DemoService) {
+    function DemoController(DemoService) {
         var self = this;
         self.dummy = 'angularjs';
         self.customers = [];
@@ -13,14 +13,19 @@
             DemoService.Get()
                 .then(function (result) {
                     if (result.status === 200) {
-                        self.customers = result.data;
+                        if (typeof (result.data) !== 'object') {
+                            throw 'Invalid response: ' + result.data;
+                        }
+                        else {
+                            self.customers = result.data;
+                        }
                     }
                 })
                 .catch(function (error) {
-                    alert(error);
+                    console.error(error);
+                    alert('Error:' + error);
                 });
         }
-
         activate();
     }
 })();
