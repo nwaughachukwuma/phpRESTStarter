@@ -16,6 +16,7 @@
     "gulp-inject": "^4.2.0",
     "gulp-minify": "0.0.14",
     "gulp-rimraf": "^0.2.1",
+    "gulp-watch": "^4.3.11",
     "main-bower-files": "^2.13.1"
   }
 }

@@ -1,0 +1,27 @@
+<div>
+    <p>
+        Hello from {{ mc.dummy }}!
+    </p>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    NUMBER
+                </th>
+                <th>
+                    NAME
+                </th>
+                <th>
+                    EMAIL
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in dc.customers">
+                <td>{{item.customerNumber}}</td>
+                <td>{{item.customerName}}</td>
+                <td>{{item.email}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

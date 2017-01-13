@@ -2,5 +2,9 @@
 <script src="/bower_components/angular/angular.js"></script>
 <!-- endinject -->
 <!-- inject:js -->
-<script src="/app/app.js"></script>
+<script src="/app/main.module.js"></script>
+<script src="/app/demo/demo.module.js"></script>
+<script src="/app/demo/demo.controller.js"></script>
+<script src="/app/demo/demo.directive.js"></script>
+<script src="/app/demo/demo.service.js"></script>
 <!-- endinject -->

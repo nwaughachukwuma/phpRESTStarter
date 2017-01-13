@@ -3,34 +3,67 @@ var rimraf = require('gulp-rimraf');
 var mainBower = require('main-bower-files');
 var inject = require('gulp-inject');
 var gulpFilter = require('gulp-filter');
+var watch = require('gulp-watch');
 
 /**
- * Inject dependencies into include files
+ * Inject dependencies 
  */
 
-// Collects sources target
-var sources = gulp.src(['includes/js-imports.inc']);
-
 // Collects dependencies to inject
-var depInject = gulp.src(mainBower(), { base: 'bower_components/', read: false })
-    .pipe(gulpFilter('**/*.js'));
+var dependencies = gulp.src(mainBower(), { read: false });
+var depJs = dependencies.pipe(gulpFilter('**/*.js'));
+var depCss = dependencies.pipe(gulpFilter('**/*.css'));
 
 // Collects application js files to inject
-var appInject = gulp.src('app/**/*.js', { read: false });
+var appJsFiles = [
+    'app/**/*.module.js',
+    'app/**/*.js'
+];
 
-gulp.task('inject', function() {
-    return sources.pipe(inject(
-        depInject, {name: 'bower'}
-    ))
-    .pipe(inject(appInject))
+gulp.task('injectJs', function() {
+    
+    var jsApp = gulp.src(appJsFiles, { read: false });
+
+    return gulp.src('includes/js-imports.inc')
+    .pipe(inject(depJs, {name: 'bower'}))
+    .pipe(inject(jsApp))
     .pipe(gulp.dest('includes/'));
 });
+
+gulp.task('injectCss', function() {
+
+    var cssApp = gulp.src('public/style/**/*.css', { read: false });
+
+    return gulp.src('includes/meta-imports.inc')
+    .pipe(inject(depCss, {name: 'bower'}))
+    .pipe(inject(cssApp))
+    .pipe(gulp.dest('includes/'));
+});
+
+/**
+ * Inject
+ */
+gulp.task('inject', ['injectJs', 'injectCss']);
+
 /* Inject end */
 
 
 /**
- * Deploy script
+ * Build script
  */
-gulp.task('deploy', function() {
+gulp.task('build', function() {
     console.log("Not yet implemented");
+});
+
+
+/**
+ * Watch for changes
+ */
+gulp.task('watch', function() {
+    watch(['app/**/*.js'], function() {
+        gulp.start('injectJs');
+    });
+    watch(['public/style/**/*.css'], function() {
+        gulp.start('injectCss');
+    });
 });

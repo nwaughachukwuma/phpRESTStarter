@@ -39,13 +39,15 @@ mySQL / php REST / angularjs frontend with static HTML files SEO friendly
         
     </VirtualHost>'
 
-.Enable rewrite apache module in httpd.conf:
+.Enable rewrite module in httpd.conf:
     LoadModule rewrite_module modules/mod_rewrite.so
+.Enable include module in httpd.conf:
+    LoadModule include_module modules/mod_include.so
 .Enable php, add these lines:
-    AddHandler application/x-httpd-php .php
+    'AddHandler application/x-httpd-php .php
     AddType application/x-httpd-php .php .html
     LoadModule php7_module "c:/php/php7apache2_4.dll"
-    PHPIniDir "c:/php"
+    PHPIniDir "c:/php"'
 
 - mySQL
 .Create a database called 'bassolidb', using the sql script: sql_scripts/db_init.sql
@@ -99,3 +101,9 @@ $: composer require <pkg_name>
 create a private method called customers
 .This method should call your new service and return the result/perform actions.
 .You should use dependency injection service to load your class into api.php (see di/config.php).
+
+# Use gulp watch during development:
+.Run gulp watch to run automatically some actions if you add/delete/edit a css/js file:
+    $: gulp watch
+    Actions:
+     -Injection

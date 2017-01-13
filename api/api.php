@@ -68,7 +68,7 @@ class API extends rest\RestApi {
     /**
     *   GET (DEMO)
     */
-    private function demo() {
+    private function sample() {
         try {
 
             $samples = $this->container->get('Samples');
