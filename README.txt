@@ -41,8 +41,6 @@ mySQL / php REST / angularjs frontend with static HTML files SEO friendly
 
 .Enable rewrite module in httpd.conf:
     LoadModule rewrite_module modules/mod_rewrite.so
-.Enable include module in httpd.conf:
-    LoadModule include_module modules/mod_include.so
 .Enable php, add these lines:
     'AddHandler application/x-httpd-php .php
     AddType application/x-httpd-php .php .html
@@ -82,7 +80,8 @@ $: gulp inject (inject the new dependencies into html files)
 $: composer require <pkg_name>
 
 # Production deploy:
-...
+.Run the follow gulp command to uglify and compress js/html app and third party files for the production in the 'dist' folder.
+    $: gulp build
 
 # How to edit the database
 .Add or edit a .xml file into the DbChangeLog folder, describe the changes into this file
