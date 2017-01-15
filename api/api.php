@@ -49,7 +49,7 @@ class API extends rest\RestApi {
 
         $this->log->debug($this->get_request_method()." - \\".$func);
 
-		if((int)method_exists($this,$func) > 0)
+		if((int)method_exists($this, $func) > 0)
 			$response_payload = $this->$func();
 		else {
             // If the method not exist with in this class "Page not found".
@@ -102,6 +102,6 @@ class API extends rest\RestApi {
 	}
 }
 
-// Initiiate Library
+// Init Library
 $api = new API($container);
 $api->processApi();

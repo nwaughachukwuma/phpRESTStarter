@@ -2,7 +2,8 @@
     'use strict;'
 
     angular.module('bassoli.core', [
-        'pascalprecht.translate'
+        'pascalprecht.translate',
+        'bassoli.templates'
     ]);
 
 })();

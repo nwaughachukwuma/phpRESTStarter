@@ -1,6 +1,8 @@
 (function () {
     'use strict;'
 
-    angular.module('bassoli.demo', []);
+    angular.module('bassoli.demo', [
+        'bassoli.core'
+    ]);
 
 })();
