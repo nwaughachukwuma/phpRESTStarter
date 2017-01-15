@@ -1,9 +1,24 @@
 mySQL / php REST / angularjs frontend with static HTML files SEO friendly
 
+# Folders structure:
+/api: PHP Rest service, get, add or edit data through JSON format
+/app: AngularJs frontend MPA
+    /app/core/ui-translations: Localization strings for the UI
+/bower_component: Bower folder archive for dependencies
+/DbChangeLog: Database version control with liquibase
+/dist: Destination folder for the production release of the project
+/html: Folder with html main files. For SEO
+/log: Log folder
+/node_modules: Node package manager folder archive for dependencies
+/public: Folder style section
+/sql_scripts: Sql scripts folder
+/vendor: Composer folder archive for dependencies
+gulpfile.js: Project automation script
+
 # Environment configurations:
 
 - PHP:
-.Download PHP thread-safe version per APACHE
+.Download PHP thread-safe version for APACHE
 .Into C:\php edit file php.ini. This the rows to edit:
     extension=php_openssl.dll
     extension=php_mysqli.dll
@@ -41,6 +56,8 @@ mySQL / php REST / angularjs frontend with static HTML files SEO friendly
 
 .Enable rewrite module in httpd.conf:
     LoadModule rewrite_module modules/mod_rewrite.so
+.Enable include module:
+    LoadModule include_module modules/mod_include.so
 .Enable php, add these lines:
     'AddHandler application/x-httpd-php .php
     AddType application/x-httpd-php .php .html
