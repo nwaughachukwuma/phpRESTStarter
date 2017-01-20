@@ -1,7 +1,7 @@
 (function () {
     'use strict;'
 
-    angular.module('bassoli.demo')
+    angular.module('project.demo')
         .service('DemoService', ['$http', DemoService]);
     
     function DemoService($http) {
@@ -11,7 +11,7 @@
         };
 
         function get() {
-            return $http.get('http://localhost:85/api/sample');
+            return $http.get('http://localhost:86/api/sample');
         }
 
         return service;

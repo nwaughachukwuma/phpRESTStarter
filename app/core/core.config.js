@@ -1,7 +1,7 @@
 (function () {
     'use strict;'
 
-    angular.module('bassoli.core')
+    angular.module('project.core')
         .config(['$translateProvider', coreConfig]);
 
     function coreConfig($translateProvider) {

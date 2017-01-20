@@ -1,7 +1,7 @@
 (function () {
     'use strict;'
 
-    angular.module('bassoli.demo')
+    angular.module('project.demo')
         .controller('DemoController', ['DemoService', DemoController]);
 
     function DemoController(DemoService) {

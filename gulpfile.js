@@ -10,12 +10,6 @@ var sync = require('gulp-sync')(gulp);
 var templateCache = require('gulp-angular-templatecache');
 var minifyHTML = require('gulp-minify-html');
 
-// Collects html main files
-var htmlfiles = gulp.src([
-    'index.html',
-    'html/**/*.html'
-], { base: "./" });
-
 /**
  * Inject dependencies during development
  */
@@ -36,7 +30,7 @@ gulp.task('injectJs', function () {
 
     var jsApp = gulp.src(appJsFiles, { read: false });
 
-    return htmlfiles
+    return gulp.src('index.html')
         .pipe(inject(depJs, { name: 'vendor' }))
         .pipe(inject(jsApp))
         .pipe(gulp.dest('./'));
@@ -47,7 +41,7 @@ gulp.task('injectCss', function () {
 
     var cssApp = gulp.src('public/style/**/*.css', { read: false });
 
-    return htmlfiles
+    return gulp.src('index.html')
         .pipe(inject(depCss, { name: 'vendor' }))
         .pipe(inject(cssApp))
         .pipe(gulp.dest('./'));
@@ -95,7 +89,7 @@ gulp.task('compress', function () {
                 .on('error', reject)
                 .pipe(gulp.dest('dist/'))
                 .on('end', resolve);
-        }),
+        })
     ]).then(function () {
         console.log('compression end');
     });
@@ -109,14 +103,14 @@ gulp.task('clean', function () {
 
 // Inject the minified application files into html
 gulp.task('inject-app-build', function () {
-    return htmlfiles
+    return gulp.src('index.html')
         .pipe(inject(gulp.src(['dist/app.js', 'dist/templates.js', 'dist/style.css'], { read: false })))
         .pipe(gulp.dest('dist/'));
 });
 
 // Inject the minified vendor files into html
 gulp.task('inject-vendor-build', function () {
-    return gulp.src('dist/**/*.html')
+    return gulp.src('index.html')
         .pipe(inject(gulp.src(['dist/vendor.js', 'dist/vendor.css'], { read: false }), { name: 'vendor' }))
         .pipe(gulp.dest('dist/'));
 });
@@ -129,7 +123,7 @@ gulp.task('template', function() {
             loose: true
         }))
         .pipe(templateCache({
-            module: 'bassoli.templates',
+            module: 'project.templates',
             standalone: true,
             root: '/app/'
         }))

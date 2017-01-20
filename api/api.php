@@ -1,10 +1,12 @@
 <?php
+declare(strict_types=1);
 
 require_once "base/rest.php";
 require_once "demo/samples.php";
 
 // Load vendors libs
-require "../vendor/autoload.php";
+require "bootstrap.php";
+
 
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;

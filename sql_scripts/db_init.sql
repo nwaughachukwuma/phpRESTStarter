@@ -1,6 +1,6 @@
-CREATE DATABASE IF NOT EXISTS bassolidb;
+CREATE DATABASE IF NOT EXISTS myDb;
  
-USE bassolidb;
+USE myDb;
 
 --
 -- Table structure for table `samples`

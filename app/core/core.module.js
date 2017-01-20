@@ -1,9 +1,9 @@
 (function () {
     'use strict;'
 
-    angular.module('bassoli.core', [
+    angular.module('project.core', [
         'pascalprecht.translate',
-        'bassoli.templates'
+        'project.templates'
     ]);
 
 })();
