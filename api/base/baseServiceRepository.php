@@ -9,7 +9,7 @@ namespace serviceRepository {
         protected const DB_SERVER = "127.0.0.1";
         protected const DB_USER = "root";
         protected const DB_PASSWORD = "root";
-        protected const DB = "bassolidb";
+        protected const DB = "myDb";
 
         protected $mysqli = NULL;
 

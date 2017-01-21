@@ -110,7 +110,7 @@ gulp.task('inject-app-build', function () {
 
 // Inject the minified vendor files into html
 gulp.task('inject-vendor-build', function () {
-    return gulp.src('index.html')
+    return gulp.src('dist/index.html')
         .pipe(inject(gulp.src(['dist/vendor.js', 'dist/vendor.css'], { read: false }), { name: 'vendor' }))
         .pipe(gulp.dest('dist/'));
 });
