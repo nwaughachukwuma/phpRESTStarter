@@ -8,21 +8,34 @@ Automation: npm, bower, composer, gulp
 Folder structure:
 
 `/api`: PHP Rest service, get, add or edit data through JSON format
+
 `/app`: AngularJs frontend
+
 `/app/core/ui-translations`: Localization strings for the UI
+
 `/bower_component`: Bower folder
+
 `/dist`: Destination folder for the production release of the project
+
 `/log`: Log folder
+
 `/node_modules`: Node package manager folder
+
 `/public`: Folder style section
+
 `/sql_scripts`: Sql scripts folder
+
 `/vendor`: Composer folder
 
 # Requirements
 *[NodeJs](https://nodejs.org)* (>6.1)
+
 *[PHP](http://windows.php.net/)* (>7.0)
+
 *[Apache](https://www.apachelounge.com/)* (2.4)
+
 *[mySQL](https://www.mysql.it/)*
+
 *[Composer](https://getcomposer.org/)*
 
 # How to start
