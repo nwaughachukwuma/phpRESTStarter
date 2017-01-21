@@ -4,8 +4,10 @@
 
 ## Brief
 REST server in php with mySQL database. AngularJs as a web api consumer. All on Apache web server.
-Automation: npm, bower, composer, gulp
-Folder structure:
+
+Automation: npm, bower, composer, gulp.
+
+### Folder structure:
 
 `/api`: PHP Rest service, get, add or edit data through JSON format
 
